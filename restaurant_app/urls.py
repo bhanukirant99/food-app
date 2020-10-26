@@ -1,7 +1,7 @@
 """restaurant_app URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.1/topics/http/urls/
+    https://docs.djangoproject.com/en/3.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from restaurant_app import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+
+    path('',views.showMain,name="restro"),
+    path('register/',views.registerPage,name="register"),
+    path('save_res/',views.save_res,name="save_res"),
+    path('restro_login/',views.restro_login,name="restro_login"),
+    path('restro_login_check/',views.restro_login_check,name="restro_login_check"),
+    path('restro_home/',views.restro_home,name="restro_home"),
+
 ]
